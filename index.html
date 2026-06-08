@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGE - Iniciar Sesión</title>
+    <link rel="icon" type="image/png" href="/favicon.jpg">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="contenedor-login">
+        <div class="tarjeta-form" id="form-login">
+            <h2>SIGE Escolar</h2>
+            <p class="subtitulo">Ingresa tus credenciales de docente</p>
+            
+            <form action="login.php" method="POST">
+                <div class="grupo-input">
+                    <label for="correo_login">Correo Electrónico</label>
+                    <input type="email" id="correo_login" name="correo" required placeholder="ejemplo@escuela.com">
+                </div>
+                <div class="grupo-input">
+                    <label for="pass_login">Contraseña</label>
+                    <input type="password" id="pass_login" name="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn-primario">Iniciar Sesión</button>
+            </form>
+            <p class="cambio-form">¿No tienes cuenta? <a href="#" onclick="alternarFormularios()">Regístrate aquí</a></p>
+        </div>
+
+        <div class="tarjeta-form oculto" id="form-registro">
+            <h2>Registro de Docente</h2>
+            <p class="subtitulo">Crea una cuenta para administrar tus cursos</p>
+            
+            <form action="registro.php" method="POST">
+                <div class="grupo-input">
+                    <label for="nombre_reg">Nombre Completo</label>
+                    <input type="text" id="nombre_reg" name="nombre" required placeholder="Prof. Juan Pérez">
+                </div>
+                <div class="grupo-input">
+                    <label for="correo_reg">Correo Electrónico</label>
+                    <input type="email" id="correo_reg" name="correo" required placeholder="juan.perez@escuela.com">
+                </div>
+                <div class="grupo-input">
+                    <label for="pass_reg">Contraseña</label>
+                    <input type="password" id="pass_reg" name="password" required placeholder="Mínimo 8 caracteres">
+                </div>
+                <button type="submit" class="btn-primario">Crear Cuenta</button>
+            </form>
+            <p class="cambio-form">¿Ya tienes cuenta? <a href="#" onclick="alternarFormularios()">Inicia sesión</a></p>
+        </div>
+    </div>
+
+    <script>
+        function alternarFormularios() {
+            document.getElementById('form-login').classList.toggle('oculto');
+            document.getElementById('form-registro').classList.toggle('oculto');
+        }
+    </script>
+</body>
+</html>
